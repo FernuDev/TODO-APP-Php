@@ -19,9 +19,17 @@
 
 ## 📂 Estructura del Proyecto
 ```bash
-TODO-App
+TODO-Backend
 ├── index.php
-├── frontend
+|   ├── src
+|   │   ├── config
+|   │   │   └── Database.php
+|   │   ├── controllers
+|   │   │   └── TodoController.php
+|   │   └── models
+|   │       └── Todo.php
+
+TODO-Frontend
 │   ├── src
 │   │   ├── App.jsx
 │   │   ├── components
@@ -30,14 +38,6 @@ TODO-App
 │   │   └── services
 │   │       └── api.js
 │   └── public
-└── backend
-    ├── src
-    │   ├── config
-    │   │   └── Database.php
-    │   ├── controllers
-    │   │   └── TodoController.php
-    │   └── models
-    │       └── Todo.php
 ```
 
 ## ⚙️ Configuración
@@ -56,8 +56,8 @@ $password = "tu_contraseña";
 ```
 3. Crea la base de datos y la tabla:
 ```sql
-CREATE DATABASE todo_db;
-USE todo_db;
+CREATE DATABASE todoapp;
+USE todoapp;
 CREATE TABLE todos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -75,13 +75,13 @@ npm run dev
 ## ▶️ Ejecución
 1. Inicia el Backend:
 ```bash
-cd backend
+cd TODO-Backend
 php -S localhost:8000 index.php
 ```
 
 2. Ejecuta el Frontend en otro terminal:
 ```bash
-cd frontend
+cd TODO-Frontend
 npm run dev
 ```
 
